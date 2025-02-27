@@ -1,6 +1,6 @@
 
 import os
-from vid_aud import VideoToAudioConverter
+from vid_aud.vid_aud import VideoToAudioConverter
 
 
 RED = "\033[91m"
