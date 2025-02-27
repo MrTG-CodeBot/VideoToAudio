@@ -20,6 +20,7 @@ A simple command-line tool to convert video files to audio formats.
    ```bash
    git clone https://github.com/MrTG-CodeBot/6ix4rmin9.git
    cd VideoToAudio
+   python3 main.py
    ```
 
 2. Install the required dependencies:
@@ -36,7 +37,7 @@ python main.py
 
 Follow the prompts:
 1. Enter the path to your video file (MP4 or MKV format)
-2. Enter the desired output path for the audio file (including the extension: MP3, M4A, or WAV)
+2. Enter the desired output path for the audio file (including the extension: MP3, or WAV)
 
 Example:
 ```
@@ -67,7 +68,7 @@ The converter includes basic error handling for:
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](https://github.com/MrTG-CodeBot/VideoToAudio/blob/main/LICENSE)
 
 ## Author
 
@@ -77,8 +78,3 @@ Created by [MrTG-CodeBot](https://github.com/MrTG-CodeBot)
 
 Contributions, issues, and feature requests are welcome!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
