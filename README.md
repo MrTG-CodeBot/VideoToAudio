@@ -1,8 +1,6 @@
-# 6ix4rmin9 Video to Audio Converter
+# Video to Audio Converter
 
 A simple command-line tool to convert video files to audio formats.
-
-![6ix4rmin9 Banner](https://raw.githubusercontent.com/MrTG-CodeBot/assets/main/banner.png)
 
 ## Features
 
@@ -21,7 +19,7 @@ A simple command-line tool to convert video files to audio formats.
 1. Clone the repository:
    ```bash
    git clone https://github.com/MrTG-CodeBot/6ix4rmin9.git
-   cd 6ix4rmin9
+   cd VideoToAudio
    ```
 
 2. Install the required dependencies:
