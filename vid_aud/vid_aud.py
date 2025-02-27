@@ -1,10 +1,5 @@
-
 import os
-try:
-    from moviepy import VideoFileClip
-except ImportError:
-    import subprocess
-    subprocess.run(['pip','install','moviepy'])
+import subprocess
 
 class VideoToAudioConverter:
     def __init__(self):
@@ -15,6 +10,7 @@ class VideoToAudioConverter:
             return None
 
         try:
+            from moviepy.editor import VideoFileClip 
             video = VideoFileClip(vid_path)
             video.audio.write_audiofile(aud_path)
             video.close()
@@ -24,6 +20,9 @@ class VideoToAudioConverter:
             else:
                 return False
 
+        except ImportError:
+            subprocess.run(['pip','install','moviepy'])
+            return None
         except Exception as e:
             print(f"Error in converting video to audio: {e}")
             return None
