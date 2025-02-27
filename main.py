@@ -21,7 +21,7 @@ if __name__ == "__main__":
     video_path = video_path.replace('"', "")
 
     if c.video_check(video_path):
-        print("Example: C:\\path\\tofolder\\filename.mp3 (Make sure to include the full path and the extension eg: .mp3, .m4a, .wav)")
+        print("Example: C:\\path\\tofolder\\filename.mp3 (Make sure to include the full path and the extension eg: .mp3, .wav)")
         music_path = input("Enter the full path and filename for the saved audio (e.g., C:\\path\\to\\my_audio.mp3): ")
         music_path = music_path.replace('"', "")
         if c.audio_check(music_path):
