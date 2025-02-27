@@ -10,7 +10,7 @@ class VideoToAudioConverter:
             return None
 
         try:
-            from moviepy.editor import VideoFileClip 
+            from moviepy import VideoFileClip
             video = VideoFileClip(vid_path)
             video.audio.write_audiofile(aud_path)
             video.close()
