@@ -1,5 +1,5 @@
 import os
-import subprocess
+import moviepy
 from moviepy import VideoFileClip
 
 class VideoToAudioConverter:
