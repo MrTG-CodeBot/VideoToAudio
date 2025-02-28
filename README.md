@@ -20,6 +20,7 @@ A simple command-line tool to convert video files to audio formats.
    ```bash
    git clone https://github.com/MrTG-CodeBot/VideoToAudio.git
    cd VideoToAudio
+   pip3 install -U -r requirements.txt
    python3 main.py
    ```
 
