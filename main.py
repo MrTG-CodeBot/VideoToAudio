@@ -1,6 +1,6 @@
-# main.py
 import io
 import sys
+import time
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8', errors='backslashreplace')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf8', errors='backslashreplace')
@@ -24,8 +24,16 @@ txt = f"""
 {RED}│code by: https://github.com/MrTG-CodeBot                                    │{RESET}
 """
 
+def type_text(text, delay=0.01):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(delay)
+    print()  # Add a newline at the end
+
 if __name__ == "__main__":
-    print(txt)
+    for line in txt.splitlines():
+        type_text(line)
+
     c = VideoToAudioConverter()
     video_path = input("Enter the path of the video located: ")
     video_path = video_path.replace('"', "")
