@@ -21,7 +21,7 @@ class VideoToAudioConverter:
                 return False
 
         except ImportError:
-            subprocess.run(['pip','install','moviepy'])
+            print("Run this command pip3 install -U -r requirements.txt")
             return None
         except Exception as e:
             print(f"Error in converting video to audio: {e}")
