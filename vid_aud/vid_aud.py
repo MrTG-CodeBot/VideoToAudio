@@ -1,5 +1,3 @@
-# vid_aud/vid_aud.py
-
 import os
 import subprocess
 from moviepy.editor import VideoFileClip
@@ -23,13 +21,8 @@ class VideoToAudioConverter:
                 return None, False, "Failed to create audio file."
 
         except ImportError:
-            try:
-                subprocess.run(['pip', 'install', 'moviepy'], check=True)
-                return self.convert_to_audio(vid_path, aud_path)  # retry after install
-            except subprocess.CalledProcessError as e:
-                return None, False, f"Failed to install moviepy: {e}"
-            except Exception as e:
-                return None, False, f"Error during moviepy install: {e}"
+            print("Run this command pip3 install -U -r requirements.txt")
+            return None
         except Exception as e:
             return None, False, f"Error converting video to audio: {e}"
 
