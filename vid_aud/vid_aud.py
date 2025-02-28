@@ -1,31 +1,37 @@
+# vid_aud/vid_aud.py
+
 import os
 import subprocess
+from moviepy.editor import VideoFileClip
 
 class VideoToAudioConverter:
     def __init__(self):
         pass
 
-    def convert_to_audio(self, vid_path: str, aud_path: str) -> str or None or bool:
+    def convert_to_audio(self, vid_path: str, aud_path: str) -> tuple[str | None, bool, str | None]:
         if not os.path.exists(vid_path):
-            return None
+            return None, False, "Video file not found."
 
         try:
-            from moviepy import VideoFileClip
             video = VideoFileClip(vid_path)
             video.audio.write_audiofile(aud_path)
             video.close()
 
             if os.path.exists(aud_path):
-                return aud_path, True
+                return aud_path, True, None
             else:
-                return False
+                return None, False, "Failed to create audio file."
 
         except ImportError:
-            print("Run this command pip3 install -U -r requirements.txt")
-            return None
+            try:
+                subprocess.run(['pip', 'install', 'moviepy'], check=True)
+                return self.convert_to_audio(vid_path, aud_path)  # retry after install
+            except subprocess.CalledProcessError as e:
+                return None, False, f"Failed to install moviepy: {e}"
+            except Exception as e:
+                return None, False, f"Error during moviepy install: {e}"
         except Exception as e:
-            print(f"Error in converting video to audio: {e}")
-            return None
+            return None, False, f"Error converting video to audio: {e}"
 
     def video_check(self, vid_path: str) -> bool:
         if vid_path.lower().endswith((".mp4", ".mkv")):
