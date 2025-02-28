@@ -1,8 +1,15 @@
+# main.py
+import io
+import sys
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8', errors='backslashreplace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf8', errors='backslashreplace')
+
 import os
 from vid_aud.vid_aud import VideoToAudioConverter
 import colorama
 
-colorama.init() 
+colorama.init()
 
 RED = colorama.Fore.RED
 RESET = colorama.Style.RESET_ALL
