@@ -1,6 +1,4 @@
 import os
-import moviepy
-
 
 class VideoToAudioConverter:
     def __init__(self):
