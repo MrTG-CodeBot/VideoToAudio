@@ -27,13 +27,14 @@ A simple command-line tool to convert video files to audio formats.
 2. Install the required dependencies:
    ```bash
    pip install moviepy
+   pip install colorama
    ```
 
 ## Usage
 
 Run the main script:
 ```bash
-python main.py
+python3 main.py
 ```
 
 Follow the prompts:
