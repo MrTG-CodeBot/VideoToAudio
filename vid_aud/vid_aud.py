@@ -1,6 +1,6 @@
 import os
 import moviepy
-from moviepy import VideoFileClip
+
 
 class VideoToAudioConverter:
     def __init__(self):
@@ -11,6 +11,7 @@ class VideoToAudioConverter:
             return None, False, "Video file not found."
 
         try:
+            from moviepy import VideoFileClip
             video = VideoFileClip(vid_path)
             video.audio.write_audiofile(aud_path)
             video.close()
