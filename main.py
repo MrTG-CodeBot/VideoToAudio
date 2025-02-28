@@ -1,10 +1,4 @@
-import io
-import sys
 import time
-
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8', errors='backslashreplace')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf8', errors='backslashreplace')
-
 import os
 from vid_aud.vid_aud import VideoToAudioConverter
 import colorama
@@ -28,7 +22,7 @@ def type_text(text, delay=0.01):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
-    print()  # Add a newline at the end
+    print() 
 
 if __name__ == "__main__":
     for line in txt.splitlines():
