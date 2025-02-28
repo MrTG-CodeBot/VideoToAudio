@@ -1,6 +1,6 @@
 import os
 import subprocess
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 
 class VideoToAudioConverter:
     def __init__(self):
