@@ -1,17 +1,20 @@
 import os
 from vid_aud.vid_aud import VideoToAudioConverter
+import colorama
 
-RED = "\033[91m"
-RESET = "\033[0m"
+colorama.init() 
+
+RED = colorama.Fore.RED
+RESET = colorama.Style.RESET_ALL
 
 txt = f"""
- {RED}│█████╗ ██╗   ██╗███████╗ █████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗██╗  ██╗│{RESET}
- {RED}│██════╝╚██╗ ██╔╝██╔════╝██╔══██╗██╔══██╗████╗ ████║██║████╗  ██║╚██╗██╔╝│{RESET}
- {RED}│█████╗  ╚████╔╝ ███████╗███████║██║  ██║██╔████╔██║██║██╔██╗ ██║ ╚███╔╝ │{RESET}
- {RED}│═══██║   ╚██╔╝  ╚════██║██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║ ██╔██╗ │{RESET}
- {RED}│█████║    ██║   ███████║██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║██╔╝ ██╗│{RESET}
- {RED}│═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝│{RESET}
- {RED}│code by: https://github.com/MrTG-CodeBot                                │{RESET}
+{RED}│█████╗ ██╗    ██╗███████╗ █████╗ ██████╗ ███╗    ███╗██╗███╗    ██╗██╗  ██╗│{RESET}
+{RED}│██════╝╚██╗ ██╔╝██╔════╝██╔══██╗██╔══██╗████╗ ████║██║████╗    ██║╚██╗██╔╝│{RESET}
+{RED}│█████╗  ╚████╔╝ ███████╗███████║██║  ██║██╔████╔██║██║██╔██╗    ██║ ╚███╔╝ │{RESET}
+{RED}│═══██║    ╚██╔╝  ╚════██║██╔══██║██║  ██║██║╚██╔╝██║██║██║╚██╗██║ ██╔██╗ │{RESET}
+{RED}│█████║    ██║    ███████║██║  ██║██████╔╝██║ ╚═╝ ██║██║██║ ╚████║██╔╝ ██╗│{RESET}
+{RED}│═════╝    ╚═╝    ╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝      ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝│{RESET}
+{RED}│code by: https://github.com/MrTG-CodeBot                                    │{RESET}
 """
 
 if __name__ == "__main__":
@@ -25,12 +28,12 @@ if __name__ == "__main__":
         music_path = input("Enter the full path and filename for the saved audio (e.g., C:\\path\\to\\my_audio.mp3): ")
         music_path = music_path.replace('"', "")
         if c.audio_check(music_path):
-            music_file, success = c.convert_to_audio(vid_path=video_path,aud_path=music_path)
+            music_file, success, error_message = c.convert_to_audio(vid_path=video_path, aud_path=music_path)
             if success:
                 print(f"Successfully converted to {music_file}")
             else:
-                print("Conversion failed")
+                print(f"Conversion failed: {error_message}")
         else:
-            print("You didn't add the correct extension of the audio file(.mp3, or .wav)")
+            print("You didn't add the correct extension of the audio file(.mp3, .m4a, or .wav)")
     else:
         print("You didn't add the correct extension of the video file(.mp4 or .mkv)")
